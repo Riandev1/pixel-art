@@ -30,7 +30,6 @@ for (let i = 0; i < colors.length; i++) {
   }
 }
 
-
 const colorElements = paletteElement.getElementsByClassName("color");
 let colorsFound = [];
 
