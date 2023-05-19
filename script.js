@@ -87,14 +87,4 @@ for (let i = 0; i < 25; i++) {
   pixelBoard.appendChild(pixelElement);
 }
 
-
-const pixelElements = document.getElementsByClassName("pixel");
-const pixelCount = pixelElements.length;
-const expectedPixelCount = 5;
-
-if (pixelCount !== expectedPixelCount) {
-  console.error("comprimento de 5 elementos.");
-}
-
-
 /*-------------------------------------------------------------------*/

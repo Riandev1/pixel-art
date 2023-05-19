@@ -62,3 +62,9 @@
   display: inline-block;
   margin-right: 5px;
 }
+
+#pixel-board {
+  width: 245px;
+  height: 245px;
+}
+
