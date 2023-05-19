@@ -4,7 +4,7 @@ titleELement.textContent = "Paleta de Cores";
 document.body.appendChild(titleELement);
 
 /*-------------------------------------------------------------------*/
-const colors = ["#FF0000", "#00FF00", "#0000FF", "#FFFF00"];
+const colors = ["#000000", "#00FF00", "#0000FF", "#FFFF00"];
 
 const paletteElement = document.createElement("div");
 paletteElement.setAttribute("id", "color-palette");
@@ -42,5 +42,4 @@ let allColorsPresent = colors.every(function(color) {
   return colorsFound.includes(color);
 });
 
-/* ---------------------------------------------------------------*/
-
+/*-------------------------------------------------------------------*/

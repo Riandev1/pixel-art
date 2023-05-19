@@ -1,7 +1,8 @@
-/* #palette-color{
+#color-palette{
   display: flex;
   justify-content: center;
   margin-top: 10px;
+ color: black;
 }
 
 .color {
@@ -9,4 +10,4 @@
   height: 10px;
   margin-right: 5px;
   border: 1px solid black;
-} */
+}
