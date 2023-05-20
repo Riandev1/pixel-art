@@ -1,19 +1,19 @@
-const titleELement = document.createElement("h1");
-titleELement.setAttribute("id", "title");
-titleELement.textContent = "Paleta de Cores";
+const titleELement = document.createElement('h1');
+titleELement.setAttribute('id', 'title');
+titleELement.textContent = 'Paleta de Cores';
 document.body.appendChild(titleELement);
 
 /*-------------------------------------------------------------------*/
 
 /*-------------------------------------------------------------------*/
-const colors = ["#000000", "#00FF00", "#0000FF", "#FFFF00"];
-const paletteElement = document.createElement("div");
-paletteElement.setAttribute("id", "color-palette");
+const colors = ['#000000', '#00FF00', '#0000FF', '#FFFF00'];
+const paletteElement = document.createElement('div');
+paletteElement.setAttribute('id', 'color-palette');
 
-const pixelBoard = document.createElement("div");
-pixelBoard.setAttribute("id", "pixel-board");
+const pixelBoard = document.createElement('div');
+pixelBoard.setAttribute('id', 'pixel-board');
 
-const titleElement = document.querySelector("h1#title");
+const titleElement = document.querySelector('h1#title');
 titleElement.parentNode.insertBefore(paletteElement, titleElement.nextSibling);
 paletteElement.parentNode.insertBefore(pixelBoard, paletteElement.nextSibling);
 
@@ -22,26 +22,29 @@ const corUnica = [];
 for (let i = 0; i < colors.length; i++) {
   const color = colors[i];
 
-  if (color !== "#FFFFFF" && !corUnica.includes(color)) {
+  if (color !== '#FFFFFF' && !corUnica.includes(color)) {
     corUnica.push(color);
 
-    const colorElement = document.createElement("div");
-    colorElement.classList.add("color");
+    const colorElement = document.createElement('div');
+    colorElement.classList.add('color');
     colorElement.style.backgroundColor = color;
     paletteElement.appendChild(colorElement);
   }
 }
 
-const buttonElement = document.createElement("button");
-buttonElement.setAttribute("id", "button-random-color");
-buttonElement.textContent = "Cores aleatórias";
-paletteElement.parentNode.insertBefore(buttonElement, paletteElement.nextSibling);
+const buttonElement = document.createElement('button');
+buttonElement.setAttribute('id', 'button-random-color');
+buttonElement.textContent = 'Cores aleatórias';
+paletteElement.parentNode.insertBefore(
+  buttonElement,
+  paletteElement.nextSibling
+);
 
-buttonElement.addEventListener("click", generateRandomPalette);
+buttonElement.addEventListener('click', generateRandomPalette);
 
 function generateRandomPalette() {
   const randomColors = generateRandomColors(3);
-  const colorElements = paletteElement.getElementsByClassName("color");
+  const colorElements = paletteElement.getElementsByClassName('color');
 
   for (let i = 1; i < colorElements.length; i++) {
     colorElements[i].style.backgroundColor = randomColors[i - 1];
@@ -65,8 +68,8 @@ function generateRandomColors(count) {
 }
 
 function getRandomColor() {
-  const letters = "0123456789ABCDEF";
-  let color = "#";
+  const letters = '0123456789ABCDEF';
+  let color = '#';
 
   for (let i = 0; i < 6; i++) {
     color += letters[Math.floor(Math.random() * 16)];
@@ -76,16 +79,35 @@ function getRandomColor() {
 }
 
 for (let i = 0; i < 25; i++) {
-  const pixelElement = document.createElement("div");
-  pixelElement.classList.add("pixel");
-  pixelElement.style.width = "40px";
-  pixelElement.style.height = "40px";
-  pixelElement.style.backgroundColor = "#FFFFFF";
-  pixelElement.style.border = "1px solid black";
-  pixelElement.style.display = "inline-block";
-  pixelElement.style.marginRight = "5px";
+  const pixelElement = document.createElement('div');
+  pixelElement.classList.add('pixel');
+  pixelElement.style.width = '40px';
+  pixelElement.style.height = '40px';
+  pixelElement.style.backgroundColor = '#FFFFFF';
+  pixelElement.style.border = '1px solid black';
+  pixelElement.style.display = 'inline-block';
+  pixelElement.style.marginRight = '5px';
   pixelBoard.appendChild(pixelElement);
 }
 
 /*-------------------------------------------------------------------*/
+const selectedColorClass = 'selected';
 
+const defaultSelectedColor = '#000000';
+const colorElements = paletteElement.getElementsByClassName('color');
+colorElements[0].classList.add(selectedColorClass);
+
+for (let i = 1; i < colorElements.length; i++) {
+  colorElements[i].classList.remove(selectedColorClass);
+}
+
+for (const colorElement of colorElements) {
+  colorElement.addEventListener('click', function () {
+    for (const element of colorElements) {
+      element.classList.remove(selectedColorClass);
+    }
+    this.classList.add(selectedColorClass);
+  });
+}
+
+/*-------------------------------------------------------------------*/
