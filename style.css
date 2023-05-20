@@ -68,3 +68,17 @@
   height: 245px;
 }
 
+#botao-limpar {
+  background-color: #0fdc00;
+  color: white;
+  margin-left: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#botao-limpar:hover {
+  background-color: rgb(10, 11, 11);
+}
