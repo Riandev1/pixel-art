@@ -124,21 +124,17 @@ for (const pixelElement of pixelElements) {
 /*-------------------------------------------------------------------*/
 
 const buttonClearElement = document.createElement("button");
-buttonClearElement.id = "botao-limpar";
+buttonClearElement.setAttribute("id", "clear-board");
 buttonClearElement.textContent = "Limpar";
 
-
-pixelBoard.insertAdjacentElement("beforebegin", buttonClearElement);
-
+paletteElement.insertAdjacentElement("afterend", buttonClearElement);
 
 buttonClearElement.addEventListener("click", clearBoard);
 
-
 function clearBoard() {
-  const pixelElements = pixelBoard.getElementsByClassName("pixel");
-  for (let i = 0; i < pixelElements.length; i++) {
-    pixelElements[i].style.backgroundColor = "#FFFFFF";
-  }
+  const pixelElements = document.querySelectorAll("#pixel-board .pixel");
+  pixelElements.forEach(pixelElement => {
+    pixelElement.style.backgroundColor = "#FFFFFF";
+  });
 }
-
 /*-------------------------------------------------------------------*/
