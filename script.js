@@ -111,3 +111,14 @@ for (const colorElement of colorElements) {
 }
 
 /*-------------------------------------------------------------------*/
+
+
+function paintPixel(event) {
+  const selectedColor = paletteElement.querySelector(`.${selectedColorClass}`).style.backgroundColor;
+  event.target.style.backgroundColor = selectedColor;
+}
+
+const pixelElements = pixelBoard.getElementsByClassName("pixel");
+for (const pixelElement of pixelElements) {
+  pixelElement.addEventListener("click", paintPixel);
+}
