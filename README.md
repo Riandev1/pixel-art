@@ -8,7 +8,7 @@ Boas-vindas ao repositório do projeto **Arte com Pixels**!
 Neste projeto, foi implementado um editor de arte com pixels em que a pessoa usuária poderá escolher uma cor em uma paleta de cores e pintar o que quiser em um quadro branco. Este projeto foi realizado enquanto estudante de web full-stack na Trybe.
 
 ## Demonstração
-(![art-with-pixels](https://github.com/user-attachments/assets/50459e5c-f885-4296-ba7b-ec4a70a55aec)
+![art-with-pixels](https://github.com/user-attachments/assets/50459e5c-f885-4296-ba7b-ec4a70a55aec)
 
 ---
 
